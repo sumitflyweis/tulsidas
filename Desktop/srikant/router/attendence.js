@@ -10,10 +10,12 @@ const {
 const {
   createAttendenceOfStudentByTeacher,
   createAllAttendenceOfStudentByTeacher,
+  getMonthlyAttendance,
   getAttendenceOfStudentByIdByTeacher,
   getAttendenceOfStudentIdByTeacher,
   updateAttendenceOfStudentByTeacher,
   deleteAttendenceOfStudentByTeacher,
+  getStudentAttendance
 } = require("../controllers/teacher/attendence");
 const attendence = express.Router();
 
@@ -47,6 +49,11 @@ attendence.get(
   createAllAttendenceOfStudentByTeacher
 );
 attendence.get(
+  "/getMonthlyAttendance/:studentId/:month",
+  getMonthlyAttendance
+);
+
+attendence.get(
   "/getAttendenceOfStudentByIdByTeacher/:id",
   getAttendenceOfStudentByIdByTeacher
 );
@@ -62,5 +69,12 @@ attendence.delete(
   "/deleteAttendenceOfStudentByTeacher/:id",
   deleteAttendenceOfStudentByTeacher
 );
+
+attendence.get(
+  "/getStudentAttendance/:id",
+  getStudentAttendance
+);
+
+
 
 module.exports = attendence;

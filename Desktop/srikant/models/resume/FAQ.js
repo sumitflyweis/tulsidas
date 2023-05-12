@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 const objectid = mongoose.Schema.Types.ObjectId;
 const FAQSchema = mongoose.Schema(
   {
-FAQ:[{type:String}]
+FAQ:{type:String}
   },   
   {
     timestamps: true,

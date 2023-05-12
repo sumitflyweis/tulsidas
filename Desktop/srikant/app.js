@@ -36,6 +36,15 @@ const overview = require('./router/resume/overview')
 const faq = require('./router/resume/FAQ')
 const lessons = require('./router/resume/lessons')
 const requirement = require('./router/resume/requirement')
+const submenuoppurtunity = require('./router/oppurtunityParts/submenu/submenu')
+const menuoppurtunity = require('./router/oppurtunityParts/menu/menu')
+const lecture = require('./router/lecture')
+const result = require('./router/results')
+const challenges = require('./router/challenges')
+const events = require('./router/events')
+const registration = require('./router/studRegistrationRecieved')
+const checkSheett = require('./router/checksheet')
+const impQues = require('./router/impQues')
 
 
 const app = express();
@@ -79,6 +88,16 @@ app.use('/api/v1/overview',overview)
 app.use('/api/v1/faq',faq)
 app.use('/api/v1/lessons',lessons)
 app.use('/api/v1/requirement',requirement)
+app.use('/api/v1/submenuoppurtunity',submenuoppurtunity)
+app.use('/api/v1/menuoppurtunity',menuoppurtunity)
+app.use('/api/v1/lecture',lecture)
+app.use('/api/v1/result',result)
+app.use('/api/v1/challenges',challenges)
+app.use('/api/v1/events',events)
+app.use('/api/v1/registration',registration)
+app.use('/api/v1/checkSheett',checkSheett)
+app.use('/api/v1/impQues',impQues)
+
 
 
 app.all('*', (req, res, next) => {

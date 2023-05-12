@@ -53,9 +53,13 @@ exports.teacherLoginByAdmin = async (req, res) => {
     const teacherId = await teacher.findOne({ mobile: req.body.mobile });
     if (teacherId) {
       return res.status(401).json({
-        message: "Mobile number IS  REGISTER ",
+        message: "Mobile number IS  REGISTER ",teacherId:teacherId
       });
-    }
+    }else{
+      return res.status(400).json({
+        message: "Mobile number IS  NOTREGISTERED"
+    })
+  }
   } catch (err) {
     console.log(err);
     res.status(400).json({

@@ -50,7 +50,7 @@ catch (err) {
 exports.getAllstudentEnquiry = async (req, res) => {
     try{
         const data =  await StudentEnquiry.find().populate('studentId');
-        return res.status(200).send(data)
+        return res.status(200).send({msg:data})
 }catch (err) {
     console.log(err.message);
     return res.status(500).json({

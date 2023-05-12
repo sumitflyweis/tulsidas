@@ -8,11 +8,15 @@ const router = express();
 
 //TEACHER
 router.post("/register", teacher.RegisterTeacher);
-router.post("/login", teacher.teacherLogin);
+router.post("/loginteacher", teacher.teacherLogin);
 router.put("/update/:id", teacher.UpdateTeacherId);
 router.delete("/delete/:id", teacher.DeleteTeacher);
 router.get("/get/all", teacher.getAllteacher);
 router.get("/get/:id", teacher.getByTeacherId);
+router.post("/forgetPassword", teacher.forgetPasswordforteacher);
+router.put("/resetPassword/:id", teacher.resetPasswordforteacher)
+router.post("/verifyot", teacher.VerifyOtpforteacher)
+
 
 //STUDENT
 router.get("/getByTeacherIdByStudent/:id", student.getByTeacherIdByStudent);

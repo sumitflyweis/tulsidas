@@ -1,14 +1,14 @@
 const mongoose = require('mongoose');
 
 const teacherSchema = mongoose.Schema({
-    first: {
+    fullName: {
         type: String
     }, 
     image: {
         type: String, 
         default: "https://static.vecteezy.com/system/resources/thumbnails/008/154/360/small/student-logo-vector.jpg"
     },
-    last: {
+    rollNo: {
         type: String
     }, 
     mobile: {
@@ -21,7 +21,25 @@ const teacherSchema = mongoose.Schema({
         type: String
     }, 
     password: {
-        type: String
+        type: String,
+        default:""
+    },
+    wishes:{
+        type:String
+    },
+    otp:{
+        type:String,
+        default:""
+    },
+    semester:{
+        type:String
+    },
+    year:{
+        type:String
+    },
+    email:{
+        type:String,
+        default:""
     }
 });
 

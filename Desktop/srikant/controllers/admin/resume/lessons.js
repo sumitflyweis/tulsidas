@@ -14,7 +14,7 @@ exports.createlessonsByAdmin = async (req, res) => {
 exports.getAlllessonsByAdmin = async (req, res) => {
   try {
     const lessons = await lesson.find();
-   return  res.status(201).send(lessons);
+   return  res.status(201).send({msg:lessons});
   } catch (err) {
     res.status(500).json({ message: err.message });
   }

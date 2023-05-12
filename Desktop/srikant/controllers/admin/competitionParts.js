@@ -3,7 +3,7 @@ const competitionParts = require("../../models/competitionParts");
 exports.createcompetitionParts = async (req, res) => {
     try {
       const competitionPartsData = await competitionParts.create({
-        competitionParts:req.body.competitionParts,
+        competitionParts:req.body.competitionParts,image:req.body.image
       });
       return res.status(200).send({ msg: competitionPartsData });
     } catch (err) {
@@ -63,7 +63,7 @@ exports.updatecompetitionParts = async (req, res) => {
   try {
     const competitionPartsData = await competitionParts.findOneAndUpdate(
       { _id: req.params.id },
-     {$push:{competitionParts:req.body.competitionParts}},
+     {$push:{competitionParts:req.body.competitionParts}},{image:req.body.image},
       { new: true }
     );
     if (!competitionPartsData) {

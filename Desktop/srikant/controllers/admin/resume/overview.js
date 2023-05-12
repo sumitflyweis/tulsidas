@@ -14,7 +14,7 @@ exports.createoverviewByAdmin = async (req, res) => {
 exports.getAlloverviewByAdmin = async (req, res) => {
   try {
     const overviewData = await overviewD.find();
-   return  res.status(201).send(overviewData);
+   return  res.status(201).send({msg:overviewData});
   } catch (err) {
     res.status(500).json({ message: err.message });
   }

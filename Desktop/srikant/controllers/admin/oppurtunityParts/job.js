@@ -13,7 +13,7 @@ exports.createjobOfStudentByAdmin = async (req, res) => {
 exports.createAlljobOfStudentByAdmin = async (req, res) => {
     try {
         const oppurtunities = await job.find()
-        return  res.status(200).send(oppurtunities);
+        return  res.status(200).send({msg:oppurtunities});
     } catch (err) {
         res.status(500).send(err);
     }
@@ -34,7 +34,7 @@ exports.getjobOfStudentByIdByAdmin = async (req, res) => {
 
 exports.updatejobOfStudentByAdmin = async (req, res) => {
     try {
-        const oppurtunity = await job.findByIdAndUpdate({_id:req.params.id},{data: req.body.data}, { new: true });
+        const oppurtunity = await job.findByIdAndUpdate({_id:req.params.id},{ data: req.body.data }, { new: true });
         if (!oppurtunity) {
             return res.status(404).send();
         }

@@ -5,6 +5,7 @@ exports.createCompetition = async (req, res) => {
     const competitionData = await competition.create({
       competition: req.body.competition,
       competitionParts: req.body.competitionParts,
+      image:req.body.image
     });
     return res.status(200).send({ msg: competitionData });
   } catch (err) {
@@ -66,6 +67,7 @@ exports.updateCompetition = async (req, res) => {
       {
         competition: req.body.competition,
         competitionParts: req.body.competitionParts,
+        image:req.body.image,
       },
       { new: true }
     );

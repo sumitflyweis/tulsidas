@@ -162,7 +162,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/srikant/development/1681208296701-2023-04-11T10:18:16.701Z/srikant.zip"
+          "S3Key": "serverless/srikant/development/1683791327483-2023-05-11T07:48:47.483Z/srikant.zip"
         },
         "Handler": "index.handler",
         "Runtime": "nodejs18.x",
@@ -180,14 +180,14 @@
         "AppLogGroup"
       ]
     },
-    "AppLambdaVersionhGfQZ6O8f7FWo9wOV8jxa6lmJxqIAde3fPmpZA5lKI4": {
+    "AppLambdaVersiontkhtAALhbc8VM7bbDoCoJGH1Bbnzp5iupwq17Vha7HI": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "AppLambdaFunction"
         },
-        "CodeSha256": "O7g15fDMppxgBK7X9hjZDALf5ur1fgt5H6LpLWy9MAQ="
+        "CodeSha256": "sYNVquQCT6gSsd+d4RLgi6NYK7mh/sUl9VWY3d9/c0I="
       }
     },
     "ApiGatewayRestApi": {
@@ -405,7 +405,7 @@
         "AppLambdaPermissionApiGateway"
       ]
     },
-    "ApiGatewayDeployment1681208267913": {
+    "ApiGatewayDeployment1683791296232": {
       "Type": "AWS::ApiGateway::Deployment",
       "Properties": {
         "RestApiId": {
@@ -470,7 +470,7 @@
     "AppLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "AppLambdaVersionhGfQZ6O8f7FWo9wOV8jxa6lmJxqIAde3fPmpZA5lKI4"
+        "Ref": "AppLambdaVersiontkhtAALhbc8VM7bbDoCoJGH1Bbnzp5iupwq17Vha7HI"
       },
       "Export": {
         "Name": "sls-srikant-development-AppLambdaFunctionQualifiedArn"

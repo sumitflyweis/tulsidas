@@ -18,7 +18,7 @@ console.log(Revision)
 exports.getrevision = async (req, res) => {
   try {
     const revisions = await revision.find();
-   return  res.send(revisions);
+   return  res.send({msg:revisions});
   } catch (err) {
     res.status(500).send(err);
   }

@@ -14,7 +14,7 @@ exports.createrequirementByAdmin = async (req, res) => {
 exports.getAllrequirementByAdmin = async (req, res) => {
   try {
     const overviewData = await requirE.find();
-   return  res.status(201).send(overviewData);
+   return  res.status(201).send({msg:overviewData});
   } catch (err) {
     res.status(500).json({ message: err.message });
   }

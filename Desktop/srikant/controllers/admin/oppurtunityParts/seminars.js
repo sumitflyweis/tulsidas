@@ -13,7 +13,7 @@ exports.createseminarsOfStudentByAdmin = async (req, res) => {
 exports.createAllseminarsOfStudentByAdmin = async (req, res) => {
     try {
         const oppurtunities = await seminars.find()
-        return  res.status(200).send(oppurtunities);
+        return  res.status(200).send({msg:oppurtunities});
     } catch (err) {
         res.status(500).send(err);
     }
@@ -34,7 +34,7 @@ exports.getseminarsOfStudentByIdByAdmin = async (req, res) => {
 
 exports.updateseminarsOfStudentByAdmin = async (req, res) => {
     try {
-        const oppurtunity = await seminars.findByIdAndUpdate({_id:req.params.id},{data: req.body.data}, { new: true });
+        const oppurtunity = await seminars.findByIdAndUpdate({_id:req.params.id},{ data: req.body.data }, { new: true });
         if (!oppurtunity) {
             return res.status(404).send();
         }

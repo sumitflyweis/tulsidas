@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 const objectid = mongoose.Schema.Types.ObjectId;
 const overviewSchema = mongoose.Schema(
   {
-overview:[{type:String}]
+overview:{type:String}
   },   
   {
     timestamps: true,

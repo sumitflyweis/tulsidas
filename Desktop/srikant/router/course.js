@@ -14,7 +14,7 @@ course.get('/getallcourseByStudent',getallcourseByStudent)
 //TEACHER
 course.post('/createcourse',createcourse)
 course.get('/getAllcourse',getAllcourse)
-// course.put('/updatecourse/:id',updatecourse)
+course.put('/updatecourse/:id',updatecourse)
 course.delete('/deletecourse/:id',deletecourse)
 
 module.exports =course
