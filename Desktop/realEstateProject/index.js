@@ -9,11 +9,6 @@ const bodyparser = require("body-parser");
 
 const serverless = require("serverless-http");
 
-// const auth = require("./src/route/auth")
-// const subcriptions = require("./src/route/subcriptions")
-// const staff = require("./src/route/staff")
-// const department = require("./src/route/department")
-
 
 require("dotenv").config();
 
@@ -35,11 +30,9 @@ app.get("/home",(req, res) => {
   res.status(200).send({msg:"Working App"});
 });
 
-//  app.use("/api/v1/",require("./src/route/router"));
-// app.use("/subcriptions",subcriptions)
-// app.use("/staff",staff)
-// app.use("/department",department)
-
+ app.use("/api/v1/",require("./src/route/userlogin"));
+ app.use("/api/v1",require("./src/route/seller"))
+ app.use("/api/v1/wish",require("./src/route/wishlist"))
 
 app.listen(PORT, () => {
   console.log(`listening on port ${PORT}`);
