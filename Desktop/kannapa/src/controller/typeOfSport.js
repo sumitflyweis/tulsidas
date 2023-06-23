@@ -13,6 +13,24 @@ exports.createTypeOfSport = async (req, res) => {
   }
 };
 
+
+
+exports.getAllTypeOfSport = async (req, res) => {
+  try {
+    const typeOfSport = await TypeOfSport.find();
+
+    if (!typeOfSport) {
+      return res.status(404).json({ error: 'Type of sport not found' });
+    }
+
+    res.json({msg:typeOfSport});
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+};
+
+
+
 exports.getTypeOfSport = async (req, res) => {
   try {
     const typeOfSport = await TypeOfSport.findById(req.params.id);
@@ -21,7 +39,7 @@ exports.getTypeOfSport = async (req, res) => {
       return res.status(404).json({ error: 'Type of sport not found' });
     }
 
-    res.json(typeOfSport);
+    res.json({msg:typeOfSport});
   } catch (error) {
     res.status(500).json({ error: error.message });
   }

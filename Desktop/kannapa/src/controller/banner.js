@@ -4,7 +4,7 @@ const imagePattern = ("[^\\s]+(.*?)\\.(jpg|jpeg|png|gif|JPG|JPEG|PNG|GIF)$");
 exports.addBanner = async (req, res) => {
     try {
      
-      const bannerData = await banner.create({image:req.body.image,desc:req.body.desc});
+      const bannerData = await banner.create({image:req.body.image,desc:req.body.desc, date:req.body.date , status:req.body.status});
     //   if(!imagePattern.test(bannerData.image)) {res .status(400).send({msg:"invalid extennsion"})
     // }
     if(!(bannerData.image).match(imagePattern)) {return res .status(400).send({msg:"invalid extennsion"})
@@ -66,7 +66,7 @@ exports.addBanner = async (req, res) => {
         .findOneAndUpdate(
           { _id: req.params.id },
           {
-            image: req.body.image,desc: req.body.desc
+            image: req.body.image,desc: req.body.desc,date:req.body.date , status:req.body.status
           }
         )
         .exec();

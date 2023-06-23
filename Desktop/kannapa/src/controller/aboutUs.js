@@ -33,13 +33,30 @@ exports.getAboutUs = async (req, res) => {
       })
     }
   };
+
+
+  exports.getAboutUsById = async (req, res) => {
+    try {
+      const result = await AboutUs.findById({_id:req.params.id});
+      res.status(200).json({
+        message:result
+      })
+
+    } catch (error) {
+      console.error(error);
+      res.status(400).json({
+        message: err.message
+      })
+    }
+  };
   
   // UPDATE operation
   exports.updateAboutUs = async (req, res) => {
     try {
       const result = await AboutUs.findByIdAndUpdate({_id: req.params.id}, { title: req.body.title, desc: req.body.desc });
       res.status(200).json({
-        message: "ok"
+        message: "ok",
+        result:result
       })
     } catch (error) {
       console.error(error);

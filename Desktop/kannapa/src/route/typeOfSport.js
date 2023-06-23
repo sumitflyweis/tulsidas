@@ -5,6 +5,8 @@ const typeOfSportController = require('../controller/typeOfSport');
 // Create a new type of sport
 router.post('/', typeOfSportController.createTypeOfSport);
 
+router.get('/', typeOfSportController.getAllTypeOfSport);
+
 // Get a specific type of sport
 router.get('/:id', typeOfSportController.getTypeOfSport);
 
